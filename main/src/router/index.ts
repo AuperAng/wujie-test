@@ -4,15 +4,20 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/vue3',
-      component: ()=> import('@/components/vue3.vue')
+      path: '/L2',
+      component: ()=> import('@/components/L2.vue')
     },
     {
-      path: '/react',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('@/components/react.vue')
+      path: '/CM',
+      component: () => import('@/components/CM.vue')
+    },
+    {
+      path: '/ALL',
+      component: ()=> import('@/components/ALL.vue')
+    },
+    {
+      path: '/default',
+      component: ()=> import('@/App.vue')
     }
   ]
 })

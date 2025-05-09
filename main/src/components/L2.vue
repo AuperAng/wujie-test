@@ -1,5 +1,8 @@
 <script setup lang="ts">
 
+import {L2_URL} from "@/main";
+import WujieVue from "wujie-vue3";
+
 const beforeLoad = () => {
   console.log('beforeLoad')
 }
@@ -26,7 +29,7 @@ const deactivated = () => {
 </script>
 
 <template>
-    <WujieVue   
+   <WujieVue
   :beforeLoad="beforeLoad"
   :beforeMount="beforeMount"
   :afterMount="afterMount"
@@ -34,7 +37,7 @@ const deactivated = () => {
   :afterUnmount="afterUnmount" 
   :activated="activated"
   :deactivated="deactivated"
-   :props="{name:'小满',age:24}" url="http://127.0.0.1:5174/" name="vue3"></WujieVue> <!--子应用vue3-->
+   :url="L2_URL" name="L2"  :sync="true" :alive="true"></WujieVue> <!--子应用vue3-->
 </template>
 
 <style  scoped>
