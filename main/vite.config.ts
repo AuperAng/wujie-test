@@ -11,5 +11,15 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
+  },
+   server:{
+      proxy:{
+          '/iplat':{
+              target:'http://localhost:8080',
+              changeOrigin:true,
+              rewrite:(path)=>path.replace(/^\/iplat/,'/iplat')
+          },
+          // '/b08':'http://localhost:8080/'
+      }
+   }
 })

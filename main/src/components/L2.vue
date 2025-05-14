@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import {L2_URL} from "@/main";
+import {L2_NAME, L2_URL} from "@/main";
 import WujieVue from "wujie-vue3";
 
 const beforeLoad = () => {
@@ -24,20 +24,16 @@ const activated = () => {
 const deactivated = () => {
   console.log('deactivated')
 }
-
-
+// const plugins = [
+// 	{ cssExcludes: ['http://localhost:5177/src/assets/main.css'] },
+// ];
 </script>
 
 <template>
    <WujieVue
-  :beforeLoad="beforeLoad"
-  :beforeMount="beforeMount"
-  :afterMount="afterMount"
-  :beforeUnmount="beforeUnmount"
-  :afterUnmount="afterUnmount" 
-  :activated="activated"
-  :deactivated="deactivated"
-   :url="L2_URL" name="L2"  :sync="true" :alive="true"></WujieVue> <!--子应用vue3-->
+	   height="80vh"
+	   :url="L2_URL" :name="L2_NAME"  :sync="true" :alive="true">
+   </WujieVue> <!--子应用vue3-->
 </template>
 
 <style  scoped>

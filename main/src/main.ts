@@ -7,7 +7,9 @@ const { preloadApp } = Wujie
 const app = createApp(App)
 
 export const L2_URL = "http://localhost:5177/"
-export const CM_URL = "https://react.dev/"
+export const CM_URL = "/iplat/web/BICZ00"
+export const L2_NAME = 'L2'
+export const CM_NAME = 'CM'
 
 app.use(router).use(Wujie) //注册一下
 
