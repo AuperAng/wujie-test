@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import {L2_NAME, L2_URL} from "@/main";
+import {alive, L2_NAME, L2_URL} from "@/main";
 import WujieVue from "wujie-vue3";
 
 const beforeLoad = () => {
@@ -32,7 +32,7 @@ const deactivated = () => {
 <template>
    <WujieVue
 	   height="80vh"
-	   :url="L2_URL" :name="L2_NAME"  :sync="true" :alive="true">
+	   :url="L2_URL" :name="L2_NAME"  :sync="true" :alive="alive">
    </WujieVue> <!--子应用vue3-->
 </template>
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import {CM_NAME, CM_URL} from "@/main";
+import {alive, CM2_NAME, CM_NAME, CM_URL, CM_URL2, runTime} from "@/main";
 import WujieVue from "wujie-vue3";
 
 const beforeLoad = () => {
@@ -29,16 +29,12 @@ const deactivated = () => {
 </script>
 
 <template>
-<!--	beforeLoad="beforeLoad"-->
-<!--	:beforeMount="beforeMount"-->
-<!--	:afterMount="afterMount"-->
-<!--	:beforeUnmount="beforeUnmount"-->
-<!--	:afterUnmount="afterUnmount"-->
-<!--	:activated="activated"-->
-<!--	:deactivated="deactivated"-->
 	<WujieVue
-		height="80vh"
-		:url="CM_URL" :name="CM_NAME" :sync="true" :alive="true"></WujieVue> <!--子应用vue3-->
+		v-show="runTime"
+		height="80vh" :url="CM_URL" :name="CM_NAME" :sync="true" :alive="alive"></WujieVue> <!--子应用vue3-->
+	<WujieVue
+		v-show="!runTime"
+		height="80vh" :url="CM_URL2" :name="CM2_NAME" :sync="true" :alive="alive"></WujieVue> <!--子应用vue3-->
 </template>
 
 <style  scoped>
