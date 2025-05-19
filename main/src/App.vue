@@ -10,8 +10,8 @@
 		<h1></h1>
 	</div>
     <router-link to="L2">L2-炉子模型</router-link>
-    <router-link style="margin-left: 10px;" to="CM">CM-运行态</router-link>
-	<router-link style="margin-left: 10px;" to="ALL">L2+CM</router-link>
+    <router-link style="margin-left: 10px;" to="CM">CM-组态</router-link>
+	<router-link style="margin-left: 10px;" to="ALL">L2 & CM</router-link>
     
     <router-view></router-view>
 </div>

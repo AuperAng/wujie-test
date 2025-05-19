@@ -2,7 +2,7 @@
 
 import {alive, L2_NAME, L2_URL} from "@/main";
 import WujieVue from "wujie-vue3";
-
+import {removeL2MainCss} from "@/utils/utils";
 const beforeLoad = () => {
   console.log('beforeLoad')
 }
@@ -18,22 +18,20 @@ const beforeUnmount = () => {
 const afterUnmount = () => {
   console.log('afterUnmount')
 }
-const activated = () => {
+const activated = (appWindow:Window) => {
   console.log('activated')
+	removeL2MainCss(appWindow)
 }
 const deactivated = () => {
   console.log('deactivated')
 }
-// const plugins = [
-// 	{ cssExcludes: ['http://localhost:5177/src/assets/main.css'] },
-// ];
 </script>
 
 <template>
-   <WujieVue
-	   height="80vh"
-	   :url="L2_URL" :name="L2_NAME"  :sync="true" :alive="alive">
-   </WujieVue> <!--子应用vue3-->
+	<WujieVue
+	    height="80vh"
+	    :url="L2_URL" :name="L2_NAME"  :sync="true" :alive="alive" :activated="activated">
+	</WujieVue> <!--子应用vue3-->
 </template>
 
 <style  scoped>

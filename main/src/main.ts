@@ -2,7 +2,6 @@ import {createApp, ref} from 'vue'
 import App from './App.vue'
 import router from './router'
 import Wujie from 'wujie-vue3'
-import WujieVue from "wujie-vue3"; //引入一下引入对应的框架
 const { preloadApp } = Wujie
 const app = createApp(App)
 
@@ -25,10 +24,14 @@ preloadApp({ name: "L2", url: L2_URL, exec: true,alive:true })
 preloadApp({ name: "CM", url: CM_URL, exec: true,alive:true })
 preloadApp({ name: "CM2", url: CM_URL2, exec: true,alive:true })
 
-const {bus} = WujieVue
-/**外部操控子应用进行路由跳转*/
-bus.$on('page-jump',(child:string,path:string)=>{
-    const l2Window = (window.document.querySelector(`iframe[name=${child}]`) as HTMLIFrameElement | undefined)?.contentWindow
-    if(!l2Window)return
-    l2Window.location.href = l2Window.location.origin + path
-})
+declare global{
+    interface Window{
+        $wujie:{
+            props:Record<string, any>,
+            bus:{
+                $on:any,
+                $emit:any,
+            }
+        },
+    }
+}
