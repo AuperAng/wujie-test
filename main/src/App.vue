@@ -6,6 +6,7 @@
 		<button @click="handleChangeL2Value" class="button">修改L2表格数据</button>
 		<button @click="handleCMStatus" class="button">组态编辑态运行态切换</button>
 		<button @click="handlePostMessage" class="button">测试postMessage通信</button>
+		<button @click="handleL2Jump" class="button">L2跳转设定值</button>
 		<button @click="handleModeChange" class="button">切换模式（当前保活：{{alive}}）</button>
 		<h1></h1>
 	</div>
@@ -18,7 +19,6 @@
 </template>
 
 <script setup lang='ts'>
-import {ref,reactive} from 'vue'
 import WujieVue from "wujie-vue3";
 const {bus} = WujieVue
 import {alive, L2_NAME, runTime} from "@/main";
@@ -39,6 +39,9 @@ const handlePostMessage = () =>{
 }
 const handleModeChange =()=>{
 	alive.value = !alive.value
+}
+const handleL2Jump = ()=>{
+	bus.$emit('route-change','setData')
 }
 </script>
 
