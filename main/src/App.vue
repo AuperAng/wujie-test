@@ -10,9 +10,9 @@
 		<button @click="handleModeChange" class="button">切换模式（当前保活：{{alive}}）</button>
 		<h1></h1>
 	</div>
-    <router-link to="L2">L2-炉子模型</router-link>
-    <router-link style="margin-left: 10px;" to="CM">CM-组态</router-link>
-	<router-link style="margin-left: 10px;" to="ALL">L2 & CM</router-link>
+    <router-link class="router-link" to="L2">L2-炉子模型</router-link>
+    <router-link class="router-link" to="CM">CM-组态</router-link>
+	<router-link class="router-link" to="ALL">L2 & CM</router-link>
     
     <router-view></router-view>
 </div>
@@ -47,7 +47,12 @@ const handleL2Jump = ()=>{
 
 <style scoped lang='less'>
 .button{
-	margin-right: 10px;
+	margin-right: 20px;
+	font-size: 20px;
 	height:30px
+}
+.router-link{
+	margin-left: 30px;
+	font-size: 30px;
 }
 </style>

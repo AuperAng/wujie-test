@@ -19,7 +19,28 @@ export default defineConfig({
               changeOrigin:true,
               rewrite:(path)=>path.replace(/^\/iplat/,'/iplat')
           },
-          // '/b08':'http://localhost:8080/'
+          // '/trueL2':{
+          //     target:'http://10.25.101.63',
+          //     changeOrigin:true,
+          //     ws:true,
+          //     rewrite:(path)=>path.replace(/^\/trueL2/,''),
+          // },
+          '/ez2api':  {
+              target:'http://10.25.7.231:80',
+              changeOrigin:true,
+              rewrite:(path)=>path.replace(/^\/ez2api/,'/ez2api'),
+          },
+          '/api': {
+              target:'http://10.25.7.231:80',
+              changeOrigin:true,
+              rewrite:(path)=>path.replace(/^\/api/,'/api'),
+          },
+          '/b08':{
+              target:'http://10.25.7.231:80',
+              changeOrigin:true,
+              ws:true,
+              rewrite:(path)=>path.replace(/^\/b08/,'/c112'),
+          }
       }
    }
 })

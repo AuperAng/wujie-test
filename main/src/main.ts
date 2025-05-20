@@ -6,7 +6,9 @@ const { preloadApp } = Wujie
 const app = createApp(App)
 
 // export const L2_URL = "http://localhost:5177/"
-export const L2_URL = "http://localhost:5177/"
+export const L2_URL = "http://10.25.116.73:5177/"
+// export const L2_URL = "http://10.25.101.63/C112_WEB/"//使用L2服务器
+// export const L2_URL = "http://10.25.7.231:80/C112_WEB/"//使用自己的服务器
 export const CM_URL = "/iplat/web/BICR1453"
 export const CM_URL2 = "/iplat/web/BICZ00"
 
@@ -27,6 +29,7 @@ preloadApp({ name: "CM2", url: CM_URL2, exec: true,alive:true })
 declare global{
     interface Window{
         $wujie:{
+            shadowRoot?:ShadowRoot,
             props:Record<string, any>,
             bus:{
                 $on:any,
